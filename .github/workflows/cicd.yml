@@ -49,7 +49,7 @@ jobs:
           https://maven.apache.org/xsd/settings-1.0.0.xsd">
             <servers>
               <server>
-                <id>github</id>
+                <id>github-java-common-shared</id>
                 <username>ngdangkietswe</username>
                 <password>${{ secrets.GITHUB_TOKEN }}</password>
               </server>
