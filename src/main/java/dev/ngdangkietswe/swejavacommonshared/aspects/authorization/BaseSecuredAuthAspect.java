@@ -1,4 +1,4 @@
-package dev.ngdangkietswe.swejavacommonshared.aspect.authorization;
+package dev.ngdangkietswe.swejavacommonshared.aspects.authorization;
 
 import com.google.protobuf.GeneratedMessageV3;
 import dev.ngdangkietswe.swejavacommonshared.utils.ProtoUtil;
@@ -19,7 +19,7 @@ import java.util.List;
  */
 
 @Aspect
-public abstract class SecuredAuthAspect {
+public abstract class BaseSecuredAuthAspect {
 
     @Before(value = "@annotation(securedAuth)")
     protected void enforceAccessControl(JoinPoint joinPoint, SecuredAuth securedAuth) {
@@ -39,7 +39,7 @@ public abstract class SecuredAuthAspect {
         var action = securedAuth.action();
 
         // If the action is UPSERT, determine if it's an update or create action based on the request field value
-        if (securedAuth.action().equals(SecuredAction.UPSERT)) {
+        if (action.equals(SecuredAction.UPSERT)) {
             String requestId = securedAuth.requestId();
             String requestFieldValue = getRequestFieldValue(joinPoint, requestId);
             action = StringUtils.isNotEmpty(requestFieldValue) ? SecuredAction.UPDATE : SecuredAction.CREATE;

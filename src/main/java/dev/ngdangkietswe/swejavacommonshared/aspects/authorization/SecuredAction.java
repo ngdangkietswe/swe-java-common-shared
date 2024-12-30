@@ -1,4 +1,4 @@
-package dev.ngdangkietswe.swejavacommonshared.aspect.authorization;
+package dev.ngdangkietswe.swejavacommonshared.aspects.authorization;
 
 /**
  * @author ngdangkietswe
