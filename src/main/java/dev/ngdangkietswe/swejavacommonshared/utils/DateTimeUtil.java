@@ -2,7 +2,9 @@ package dev.ngdangkietswe.swejavacommonshared.utils;
 
 import org.apache.commons.lang3.StringUtils;
 
+import java.sql.Date;
 import java.sql.Timestamp;
+import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.Objects;
@@ -53,5 +55,13 @@ public class DateTimeUtil {
         return Objects.nonNull(timestamp)
                 ? timestamp.toInstant().atZone(zoneId).format(createDateTimeFormatter(pattern))
                 : EMPTY;
+    }
+
+    public static Date firstDateOfMonth() {
+        return Date.valueOf(LocalDate.now().withDayOfMonth(1));
+    }
+
+    public static Date lastDateOfMonth() {
+        return Date.valueOf(LocalDate.now().withDayOfMonth(LocalDate.now().lengthOfMonth()));
     }
 }

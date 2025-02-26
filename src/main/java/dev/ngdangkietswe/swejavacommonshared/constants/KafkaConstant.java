@@ -24,5 +24,7 @@ public class KafkaConstant {
     public static final String JSON_LISTENER_CONTAINER_FACTORY = "JsonKafkaListenerContainerFactory";
 
     // TOPIC
-    public static final String CDC_AUTH_USER_TOPIC = "auth.sweauth.users";
+    public static final String TOPIC_CDC_AUTH_USERS = "auth.sweauth.users";
+    public static final String TOPIC_EMAIL_REQUEST_OVERTIME = "email.request.overtime";
+    public static final String TOPIC_EMAIL_REPLY_OVERTIME = "email.reply.overtime";
 }
