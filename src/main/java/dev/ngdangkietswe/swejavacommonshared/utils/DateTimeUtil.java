@@ -35,7 +35,7 @@ public class DateTimeUtil {
     }
 
     public static String timestampAsStringWithDefaultZone(Timestamp timestamp) {
-        return timestampAsStringWithDefaultZone(timestamp, HH_MM_SS_PATTERN);
+        return Objects.nonNull(timestamp) ? timestampAsStringWithDefaultZone(timestamp, HH_MM_SS_PATTERN) : EMPTY;
     }
 
     public static String timestampAsStringWithDefaultZone(Timestamp timestamp, String pattern) {
